@@ -2,8 +2,6 @@
 
 **BlockBank DEX** is a modern, high-performance, and user-friendly decentralized exchange built on the **Sepolia Testnet**. It enables users to swap tokens (**BBUSD** & **BBETH**) seamlessly with a professional interface, integrated portfolio management, and on-chain faucet functionality.
 
-![Project Screenshot](https://raw.githubusercontent.com/placeholder-image.png)
-*(Note: Upload a screenshot of your swap interface here)*
 
 ## 🚀 Features
 
