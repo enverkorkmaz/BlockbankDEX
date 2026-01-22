@@ -77,7 +77,7 @@ Custom ERC20 tokens representing the stable and volatile sides of the exchange.
 
 1. **Clone the Repo**:
    ```bash
-   git clone https://github.com/enverkorkmaz/blockbankdex.git
+   git clone https://github.com/enverkorkmaz/BlockbankDEX.git
    cd blockbankdex
    ```
 
