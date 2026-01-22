@@ -36,7 +36,7 @@ export const CustomConnectButton = () => {
                         {(() => {
                             if (!connected) {
                                 return (
-                                    <button onClick={openConnectModal} type="button" className="bg-zinc-900 text-white dark:bg-zinc-50 dark:text-black font-semibold rounded-xl px-4 py-2 hover:opacity-80 transition-opacity text-sm">
+                                    <button onClick={openConnectModal} type="button" className="bg-zinc-900 text-white dark:bg-zinc-50 dark:text-black font-semibold rounded-xl px-4 py-2 hover:opacity-90 hover:scale-105 active:scale-95 transition-all text-sm shadow-lg shadow-zinc-900/10 dark:shadow-white/5 cursor-pointer">
                                         Connect Wallet
                                     </button>
                                 );
@@ -44,7 +44,7 @@ export const CustomConnectButton = () => {
 
                             if (chain.unsupported) {
                                 return (
-                                    <button onClick={openChainModal} type="button" className="bg-red-500 text-white font-semibold rounded-xl px-4 py-2 hover:bg-red-600 transition text-sm">
+                                    <button onClick={openChainModal} type="button" className="bg-red-500 text-white font-semibold rounded-xl px-4 py-2 hover:bg-red-600 hover:scale-105 active:scale-95 transition-all text-sm shadow-lg shadow-red-500/20 cursor-pointer">
                                         Wrong Network
                                     </button>
                                 );
@@ -56,7 +56,7 @@ export const CustomConnectButton = () => {
                                         onClick={openChainModal}
                                         style={{ display: 'flex', alignItems: 'center' }}
                                         type="button"
-                                        className="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-3 py-2 rounded-xl font-medium hover:bg-zinc-200 dark:hover:bg-zinc-700 transition text-sm flex items-center gap-2"
+                                        className="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-3 py-2 rounded-xl font-medium hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:scale-105 active:scale-95 transition-all text-sm flex items-center gap-2 cursor-pointer shadow-sm"
                                     >
                                         {chain.hasIcon && (
                                             <div
@@ -80,7 +80,7 @@ export const CustomConnectButton = () => {
                                         {chain.name}
                                     </button>
 
-                                    <button onClick={openAccountModal} type="button" className="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-3 py-2 rounded-xl font-medium hover:bg-zinc-200 dark:hover:bg-zinc-700 transition text-sm shadow-sm ring-1 ring-zinc-200 dark:ring-zinc-700/50">
+                                    <button onClick={openAccountModal} type="button" className="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-3 py-2 rounded-xl font-medium hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:scale-105 active:scale-95 transition-all text-sm shadow-sm ring-1 ring-zinc-200 dark:ring-zinc-700/50 cursor-pointer">
                                         {account.displayName}
                                     </button>
                                 </div>

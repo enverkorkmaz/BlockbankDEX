@@ -31,10 +31,10 @@ export default function Navbar() {
                             key={item.name}
                             href={item.href}
                             className={clsx(
-                                "text-lg font-bold transition-colors",
+                                "text-lg font-bold transition-all hover:scale-110 active:scale-90",
                                 pathname === item.href
                                     ? "text-indigo-900 dark:text-white"
-                                    : "text-zinc-400 dark:text-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-300"
+                                    : "text-zinc-500 dark:text-zinc-600 hover:text-zinc-800 dark:hover:text-zinc-300"
                             )}
                         >
                             {item.name}

@@ -26,7 +26,7 @@ export default function HistoryCard() {
                 {transactions.length > 0 && (
                     <button
                         onClick={clearHistory}
-                        className="text-red-500 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+                        className="text-red-500 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-all hover:scale-110 active:scale-90 active:-rotate-12 cursor-pointer"
                         title="Clear History"
                     >
                         <Trash2 className="w-5 h-5" />
