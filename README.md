@@ -1,148 +1,105 @@
-# 🏦 BlockBank DEX: Professional Decentralized Exchange
+# 🏦 BlockBank DEX: The Future of Decentralized Trading
 
-[![Smart Contract](https://img.shields.io/badge/Solidity-0.8.20-blue.svg)](https://soliditylang.org/)
-[![Modern Frontend](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
-[![Web3 Stack](https://img.shields.io/badge/Wagmi-v2-orange.svg)](https://wagmi.sh/)
-[![Network](https://img.shields.io/badge/Network-Sepolia_Testnet-yellow.svg)](https://sepolia.etherscan.io/)
-
-<<<<<<< HEAD
-**BlockBank DEX** is an enterprise-grade, full-stack decentralized exchange platform deployed on the Ethereum Sepolia Testnet. It features a sleek, high-performance user interface, secure smart contracts with Oracle integration, and a comprehensive portfolio management system.
-=======
-
-## 🚀 Features
-
-### 🔄 Modern Swap Interface
--   **Seamless Swapping**: Swap between **BlockbankUSD (BBUSD)** and **BlockbankETH (BBETH)** instantly.
--   **Dynamic Pricing**: Real-time price feeds via **Chainlink Oracles** (Sepolia ETH/USD).
--   **0.1% Swap Fee**: A dynamic fee mechanism that accumulates value in the contract (configurable by owner).
--   **Smart Interaction**:
-    -   Auto-approval checks (Approve -> Swap flow).
-    -   Slippage protection settings.
-    -   Visual feedback for transactions (Spinning arrows, scale effects).
-
-### 🏦 Portfolio & Wallet
--   **Integrated Portfolio**: View your Net Worth, Asset Distribution (Pie Chart), and individual token balances.
--   **Testnet Faucet**: Built-in "Faucet" buttons to mint free test tokens (1000 BBUSD / 1000 BBETH) directly to your wallet.
--   **Add to Wallet**: One-click integration to add custom tokens to MetaMask.
--   **Wallet Support**: Full support for **MetaMask**, **Rainbow**, **Trust Wallet**, and others via **WalletConnect**.
-
-### 📜 Transaction History
--   **Local History**: Tracks your recent swaps with status indicators and Etherscan links.
--   **Persisted Data**: Saves transaction details locally so you never lose track of your activity.
->>>>>>> 450966a85a41dcae1217b4d422ffa891d9636a82
+BlockBank DEX is a professional-grade, full-stack decentralized exchange (DEX) platform built on the **Ethereum Sepolia Testnet**. This project demonstrates a complete DeFi ecosystem, combining secure smart contracts, real-time price oracles, and a premium user experience.
 
 ---
 
-## 📸 Interface Preview
+## 🌟 Overview
 
-*(Upload your professional screenshots to the `/public` folder and link them here)*
-> **Experience the precision of modern Web3 design with glassmorphism, real-time price feeds, and tactile interactions.**
+BlockBank DEX is designed to provide a seamless trading experience between **BBUSD** (Stablecoin) and **BBETH** (Synthetic ETH). Unlike simple swap templates, this platform integrates institutional-grade features like global price oracles and professional portfolio tracking.
 
----
-
-## ✨ Key Features
-
-### 1. 🔄 Advanced Swap Engine
-*   **Token Pairs**: Seamlessly swap between `BlockbankUSD (BBUSD)` (Stablecoin) and `BlockbankETH (BBETH)` (Synthetic ETH).
-*   **Oracle Integration**: Real-time pricing via **Chainlink V3 Aggregators** ensures fair market value swaps.
-*   **Slippage Control**: User-defined slippage tolerance (0.5%, 1.0%, etc.) to protect against front-running and volatile price shifts.
-*   **Fast Approvals**: Intelligent UI that detects allowance and guides users through the `Approve -> Swap` flow.
-
-### 2. 📊 Portfolio & Wealth Management
-*   **Asset Visualization**: Interactive Pie Charts (`Recharts`) showing asset distribution across BBUSD, BBETH, and Native Sepolia ETH.
-*   **Net Worth Tracking**: Real-time valuation of all assets in USD based on live Oracle data.
-*   **Token Utilities**:
-    *   **Faucet**: Built-in testnet tokens for developers and testers (1000 tokens per click).
-    *   **Add to Wallet**: One-click `wallet_watchAsset` integration to add tokens to MetaMask automatically.
-
-### 3. 🛡 Security & Fairness
-*   **0.1% Dynamic Fee**: Sustainable revenue model where a small fee is collected per swap (owner-configurable).
-*   **Non-Reentrant**: All swap functions are protected by OpenZeppelin's `ReentrancyGuard`.
-*   **Emergency Protection**: Contract owner can pause the DEX in case of anomalies.
-*   **Liquidity Management**: Transparent `depositLiquidity` and `withdrawLiquidity` functions for pool operators.
+### Why BlockBank?
+- **Speed & Precision**: Built with Next.js 15 and Wagmi v2 for near-instant UI updates.
+- **Reliability**: Uses **Chainlink V3 Oracles** to prevent price manipulation and ensure fair swaps.
+- **Transparency**: Every swap, fee update, and liquidity movement is broadcasted via on-chain events.
 
 ---
 
-## 🏗 System Architecture
+## 🛠 Features in Detail
 
-### Frontend Layer
-- **Framework**: Next.js 15 (App Router) for superior SEO and performance.
-- **Provider Stack**: Wagmi v2 + TanStack Query for robust blockchain state management.
-- **Wallet UI**: RainbowKit for a premium, multi-wallet connection experience.
-- **Styling**: TailwindCSS v4 with custom glassmorphism and animations.
-- **Animations**: Three.js (React Three Fiber) for the dynamic background ambient.
+### 1. 🔄 Professional Swap Engine
+The core of the platform is a robust swap mechanism that handles multi-decimal conversions (6 decimals for BBUSD, 18 for BBETH) with ease.
+- **Dynamic Pricing**: Prices are fetched directly from the Chainlink `ETH/USD` feed on Sepolia.
+- **Fee Intelligence**: A 0.1% dynamic fee is applied to every trade, ensuring the sustainability of the liquidity pool.
+- **Slippage Protection**: Users can set their tolerance levels to ensure they never get a bad deal during volatile periods.
 
-### Smart Contract Layer (Solidity)
-- **ERC20 Implementation**: Standard-compliant tokens (`BBUSD`/`BBETH`) with custom faucet logic.
-- **Swap Logic**:
-    - **Math**: `amountOut = (amountIn * (1000 - feeRate) * Price) / (Denominator)`
-    - **Safety**: Slippage checks (`minAmountOut`) passed as arguments from the frontend.
-- **Chainlink Integration**: Reliable price data directly from decentralized oracles.
+### 2. 📊 Advanced Portfolio Management
+A dedicated dashboard that gives users a 360-degree view of their assets.
+- **Visual Analytics**: Interactive Pie Charts show your asset distribution at a glance.
+- **Net Worth Calculation**: Automatically calculates your total balance in USD using live market data.
+- **Native ETH Support**: Tracks your Sepolia ETH alongside your BlockBank tokens.
 
----
-
-## 🛠 Project Structure
-
-```text
-├── app/                  # Next.js App Router (Swap, Portfolio, History)
-├── components/           # Reusable UI (Navbar, Cards, ConnectButton)
-├── contracts/            # Solidity Smart Contracts (DEX, Tokens)
-├── hooks/                # Custom Web3 hooks (History tracking)
-├── public/               # Static assets & icons
-├── utils/                # ABIs, Contract Addresses, and Formatters
-└── README.md             # This comprehensive guide
-```
+### 3. 🚰 On-Chain Developer Tools
+Testing DeFi shouldn't be hard.
+- **Integrated Faucet**: Mint 1,000 BBUSD or 1,000 BBETH directly to your wallet with a single click.
+- **Wallet Integration**: One-click "Add to Wallet" feature using `watchAsset` to instantly see your tokens in MetaMask.
 
 ---
 
-## 🚀 Deployment & Local Setup
+## 📜 Smart Contract Architecture
 
-### Live Contract Addresses (Sepolia)
-- **Swap Interface**: `0x1113997E5491012dF8BD1402C8e67465905cB3C7`
-- **BlockbankUSD**: `0x7297075a92D2b3144119889ef4f991726A3afFE4`
-- **BlockbankETH**: `0xaDcCCF2eA5bF1069FC14c01505c928d357b171ee`
-- **Chainlink ETH/USD Feed**: `0x694AA1769357215DE4FAC081bf1f309aDC325306`
+The system consists of three main contracts, designed with security and modularity in mind.
 
-### Running Locally
+### 1. `BlockbankSwap.sol` (The Core)
+This is the "Brain" of the DEX.
+- **Fee Logic**: Implements a `feeRate` that can be adjusted by the owner (capped at 5% for safety).
+- **Security**: Utilizes OpenZeppelin's `ReentrancyGuard` to prevent re-entrancy attacks and `Pausable` for emergency stops.
+- **Oracle**: Integrates `AggregatorV3Interface` to pull live data from Chainlink.
 
-1.  **Clone & Install**:
-    ```bash
-    git clone https://github.com/enverkorkmaz/blockbankdex.git
-    cd blockbankdex
-    npm install
-    ```
-
-2.  **Environment Variables**:
-    Create a `.env.local` for your WalletConnect project ID (optional for local dev):
-    ```env
-    NEXT_PUBLIC_WC_PROJECT_ID=your_id_here
-    ```
-
-3.  **Start Dev Server**:
-    ```bash
-    npm run dev
-    ```
+### 2. `BlockbankUSD.sol` & `BlockBankETH.sol` (The Assets)
+Custom ERC20 tokens representing the stable and volatile sides of the exchange.
+- **Built-in Faucet**: These tokens include a public `faucet()` function, eliminating the need for external dispencers during testing.
 
 ---
 
-## ⚙️ Administrative Functions (Owner Only)
-The contract owner has access to several management features:
-- `setFee(uint256 _newFee)`: Update the fee rate (capped at 5% for user safety).
-- `depositLiquidity(...)`: Add tokens to the swap pool.
-- `withdrawLiquidity(...)`: Collect accumulated fees or withdraw pool assets.
-- `emergencyWithdraw(...)`: Drain all tokens to a safe address in case of migration.
+## 📍 Contract Addresses (Sepolia)
+
+| Component | Contract Address |
+| :--- | :--- |
+| **DEX Swap Engine** | `0x1113997E5491012dF8BD1402C8e67465905cB3C7` |
+| **BlockbankUSD (BBUSD)** | `0x7297075a92D2b3144119889ef4f991726A3afFE4` |
+| **BlockbankETH (BBETH)** | `0xaDcCCF2eA5bF1069FC14c01505c928d357b171ee` |
+| **Chainlink ETH/USD Feed** | `0x694AA1769357215DE4FAC081bf1f309aDC325306` |
 
 ---
 
-## 🤝 Contribution
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 💻 Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TailwindCSS v4.
+- **Web3**: Wagmi v2, Viem, RainbowKit.
+- **Charts**: Recharts.
+- **Background**: Three.js (React Three Fiber) for an immersive ambient experience.
+- **Contracts**: Solidity 0.8.20, OpenZeppelin.
 
 ---
 
-## 📄 License
-Distributed under the **MIT License**. See `LICENSE` for more information.
+## 🚀 Installation & Setup
+
+1. **Clone the Repo**:
+   ```bash
+   git clone https://github.com/enverkorkmaz/blockbankdex.git
+   cd blockbankdex
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the Project**:
+   ```bash
+   npm run dev
+   ```
 
 ---
 
-**Built with passion by Enver Korkmaz.**  
-*Connecting the future of finance, one block at a time.* 🌐🏦
+## 🛡 Security & Design Decisions
+
+- **Why Chainlink?** We don't rely on internal price balances (which can be manipulated). We use the industry-standard decentralized price oracle.
+- **Why Next.js 15?** To leverage the latest App Router features for a lightning-fast, SEO-friendly Web3 frontend.
+- **Fee Management**: Fees are stored within the contract and can be withdrawn by the owner, creating a real protocol revenue model.
+
+---
+
+**Developed with ❤️ by Enver Korkmaz.**  
+*Empowering the world with decentralized finance.* 🌐🔱
